@@ -346,7 +346,7 @@ async def on_message(message: discord.Message):
         return
 
     # Ignore very short messages (single words, emojis) — hard to translate reliably
-    if len(message.content.strip()) < 3:
+    if len(message.content.strip()) < 1 or message.content.strip().replace(" ", "") == "" or all(char in "😀😁😂🤣😃😄😅😆😉😊😋😎😍😘🥰😗😙😚☺🙂🤗🤩🤔🤨😐😑😶🙄😏😣😥😮🤐😯😪😫🥱😴😌😛😜😝🤤😒😓😔😕🙃🤑😲☹🙁😖😞😟😤😢😭😦😧😨😩🤯😬😰😱🥵🥶😳🤪😵💫🤠🥸🥳🤡👹👺💀☠👻👽👾🤖" for char in message.content.strip()):
         return
 
     # Ignore messages that start with "/" (slash commands) or "!" (prefix commands)
